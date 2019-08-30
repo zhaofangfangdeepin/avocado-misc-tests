@@ -2,3 +2,5 @@ pycodestyle==2.4.0
 inspektor==0.5.2
 pep8==1.7.1
 pylint==1.9.3
+netifaces==0.10.9
+pexpect==4.7.0

@@ -153,11 +153,20 @@ diff --git a/scripts/results b/scripts/results
 index cd07c15..5f817d9 100755
 --- a/scripts/results
 +++ b/scripts/results
-@@ -1,4 +1,4 @@
+@@ -1,11 +1,11 @@
 -#!/bin/sh
 +#!/bin/bash
  
  # $Id$
+ 
+ OS=`../scripts/os`
+ CONFIG=`../scripts/config`
+ RESULTS=results/$OS
+-BASE=../$RESULTS/`uname -n`
++BASE=$RESULTS/`uname -n`
+ EXT=0
+ 
+ if [ ! -f "../bin/$OS/$CONFIG" ]
  
 diff --git a/scripts/synchronize b/scripts/synchronize
 index 302db00..eb36d5b 100755

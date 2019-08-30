@@ -82,7 +82,7 @@ class Lmbench(Test):
         process.system('yes "" | make config', shell=True, ignore_status=True)
 
         # find the lmbench config file
-        output = os.popen('ls -1 bin/*/CONFIG*').read()
+        output = os.popen('ls -1 bin/CONFIG*').read()
         config_files = output.splitlines()
         if len(config_files) != 1:
             self.error('Config not found : % s' % config_files)
@@ -115,6 +115,9 @@ class Lmbench(Test):
     def test(self):
 
         os.chdir(self.sourcedir)
+#        repath=self.sourcedir.split('/').[:-1]
+        print(self.sourcedir)
+#        os.mkdir(repath)
         build.make(self.sourcedir, extra_args='rerun')
         build.make(self.sourcedir, extra_args='rerun')
         build.make(self.sourcedir, extra_args='see')
