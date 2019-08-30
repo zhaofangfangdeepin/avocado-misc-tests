@@ -103,8 +103,6 @@ class Lmbench(Test):
                     cfg_file.write("FSDIR=%s\n" % fsdir)
                 elif line.startswith("FILE="):
                     cfg_file.write("FILE=%s\n" % temp_file)
-                elif line.startswith("MB="):
-                    cfg_file.write("MB=%s\n" % memory_size_mb)
                 else:
                     cfg_file.write(line)
             # Printing the config file
@@ -115,9 +113,6 @@ class Lmbench(Test):
     def test(self):
 
         os.chdir(self.sourcedir)
-#        repath=self.sourcedir.split('/').[:-1]
-        print(self.sourcedir)
-#        os.mkdir(repath)
         build.make(self.sourcedir, extra_args='rerun')
         build.make(self.sourcedir, extra_args='rerun')
         build.make(self.sourcedir, extra_args='see')
